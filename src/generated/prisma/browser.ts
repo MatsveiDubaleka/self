@@ -37,8 +37,3 @@ export type Session = Prisma.SessionModel
  * 
  */
 export type VerificationToken = Prisma.VerificationTokenModel
-/**
- * Model Authenticator
- * 
- */
-export type Authenticator = Prisma.AuthenticatorModel

@@ -387,8 +387,7 @@ export const ModelName = {
   User: 'User',
   Account: 'Account',
   Session: 'Session',
-  VerificationToken: 'VerificationToken',
-  Authenticator: 'Authenticator'
+  VerificationToken: 'VerificationToken'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -404,7 +403,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "user" | "account" | "session" | "verificationToken" | "authenticator"
+    modelProps: "user" | "account" | "session" | "verificationToken"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
@@ -704,80 +703,6 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         }
       }
     }
-    Authenticator: {
-      payload: Prisma.$AuthenticatorPayload<ExtArgs>
-      fields: Prisma.AuthenticatorFieldRefs
-      operations: {
-        findUnique: {
-          args: Prisma.AuthenticatorFindUniqueArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$AuthenticatorPayload> | null
-        }
-        findUniqueOrThrow: {
-          args: Prisma.AuthenticatorFindUniqueOrThrowArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$AuthenticatorPayload>
-        }
-        findFirst: {
-          args: Prisma.AuthenticatorFindFirstArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$AuthenticatorPayload> | null
-        }
-        findFirstOrThrow: {
-          args: Prisma.AuthenticatorFindFirstOrThrowArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$AuthenticatorPayload>
-        }
-        findMany: {
-          args: Prisma.AuthenticatorFindManyArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$AuthenticatorPayload>[]
-        }
-        create: {
-          args: Prisma.AuthenticatorCreateArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$AuthenticatorPayload>
-        }
-        createMany: {
-          args: Prisma.AuthenticatorCreateManyArgs<ExtArgs>
-          result: BatchPayload
-        }
-        createManyAndReturn: {
-          args: Prisma.AuthenticatorCreateManyAndReturnArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$AuthenticatorPayload>[]
-        }
-        delete: {
-          args: Prisma.AuthenticatorDeleteArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$AuthenticatorPayload>
-        }
-        update: {
-          args: Prisma.AuthenticatorUpdateArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$AuthenticatorPayload>
-        }
-        deleteMany: {
-          args: Prisma.AuthenticatorDeleteManyArgs<ExtArgs>
-          result: BatchPayload
-        }
-        updateMany: {
-          args: Prisma.AuthenticatorUpdateManyArgs<ExtArgs>
-          result: BatchPayload
-        }
-        updateManyAndReturn: {
-          args: Prisma.AuthenticatorUpdateManyAndReturnArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$AuthenticatorPayload>[]
-        }
-        upsert: {
-          args: Prisma.AuthenticatorUpsertArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$AuthenticatorPayload>
-        }
-        aggregate: {
-          args: Prisma.AuthenticatorAggregateArgs<ExtArgs>
-          result: runtime.Types.Utils.Optional<Prisma.AggregateAuthenticator>
-        }
-        groupBy: {
-          args: Prisma.AuthenticatorGroupByArgs<ExtArgs>
-          result: runtime.Types.Utils.Optional<Prisma.AuthenticatorGroupByOutputType>[]
-        }
-        count: {
-          args: Prisma.AuthenticatorCountArgs<ExtArgs>
-          result: runtime.Types.Utils.Optional<Prisma.AuthenticatorCountAggregateOutputType> | number
-        }
-      }
-    }
   }
 } & {
   other: {
@@ -869,20 +794,6 @@ export const VerificationTokenScalarFieldEnum = {
 export type VerificationTokenScalarFieldEnum = (typeof VerificationTokenScalarFieldEnum)[keyof typeof VerificationTokenScalarFieldEnum]
 
 
-export const AuthenticatorScalarFieldEnum = {
-  credentialID: 'credentialID',
-  userId: 'userId',
-  providerAccountId: 'providerAccountId',
-  credentialPublicKey: 'credentialPublicKey',
-  counter: 'counter',
-  credentialDeviceType: 'credentialDeviceType',
-  credentialBackedUp: 'credentialBackedUp',
-  transports: 'transports'
-} as const
-
-export type AuthenticatorScalarFieldEnum = (typeof AuthenticatorScalarFieldEnum)[keyof typeof AuthenticatorScalarFieldEnum]
-
-
 export const SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -952,13 +863,6 @@ export type IntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'In
  * Reference to a field of type 'Int[]'
  */
 export type ListIntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Int[]'>
-    
-
-
-/**
- * Reference to a field of type 'Boolean'
- */
-export type BooleanFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Boolean'>
     
 
 
@@ -1074,7 +978,6 @@ export type GlobalOmitConfig = {
   account?: Prisma.AccountOmit
   session?: Prisma.SessionOmit
   verificationToken?: Prisma.VerificationTokenOmit
-  authenticator?: Prisma.AuthenticatorOmit
 }
 
 /* Types for Logging */
