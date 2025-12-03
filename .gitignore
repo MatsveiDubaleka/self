@@ -37,4 +37,5 @@ yarn-error.log*
 next-env.d.ts
 
 .vercel
-prisma/migrations
+
+src/generated/prisma
